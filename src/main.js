@@ -12,12 +12,17 @@ const customGreetingMsg = document.getElementById("greeting-msg");
 
 // Function - same logic as console JavaScript
 function updateGreeting() {
+  // Increase click counter
   clickCount++;
   greetingElement.textContent = defaultUpdateMsg;
   countElement.textContent = `Button clicks: ${clickCount}`;
+
+  // Change heading color to blue at 5 clicks
   if (clickCount === 5) {
     greetingElement.style.color = "blue";
   }
+
+  // Update heading if there is a custom greeting input
   if (customGreetingMsg.value !== "") {
     greetingElement.textContent = customGreetingMsg.value;
   }
@@ -27,20 +32,14 @@ const resetForm = () => {
   // Reset Click Counter
   clickCount = 0;
   countElement.textContent = `Button clicks: ${clickCount}`;
+
   // Reset Greeting
   greetingElement.style.color = "black";
   greetingElement.textContent = defaultMsg;
+
   // Reset Text Input
   customGreetingMsg.value = "";
 };
-
-// const changeHeadingColor = () => {
-//   if (clickCount === 5) {
-//     greetingElement.color = "blue";
-//   }
-// if clickCount = 5
-// then changeHeadingColor to blue
-// };
 
 // Event listener - this is new! Responds to user interaction
 counterButton.addEventListener("click", updateGreeting);
