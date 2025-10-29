@@ -1,46 +1,18 @@
-// Variables - same as console JavaScript
+// Variables
 let clickCount = 0;
-const defaultMsg = "Hello, Console JavaScript!";
-const defaultUpdateMsg = "Hello, Browser JavaScript!";
 
-// Get references to HTML elements
-const greetingElement = document.getElementById("greeting");
-const counterButton = document.getElementById("change-greeting");
-const resetButton = document.getElementById("reset-form");
-const countElement = document.getElementById("click-count");
-const customGreetingMsg = document.getElementById("greeting-msg");
+// Get HTML elements
+const counterElement = document.getElementById("counter");
+const increaseButton = document.getElementById("increase-btn");
 
-// Function - same logic as console JavaScript
-function updateGreeting() {
-  // Increase click counter
+// Functions
+// Increase function
+const increaseCount = () => {
   clickCount++;
-  greetingElement.textContent = defaultUpdateMsg;
-  countElement.textContent = `Button clicks: ${clickCount}`;
-
-  // Change heading color to blue at 5 clicks
-  if (clickCount === 5) {
-    greetingElement.style.color = "blue";
-  }
-
-  // Update heading if there is a custom greeting input
-  if (customGreetingMsg.value !== "") {
-    greetingElement.textContent = customGreetingMsg.value;
-  }
-}
-
-const resetForm = () => {
-  // Reset Click Counter
-  clickCount = 0;
-  countElement.textContent = `Button clicks: ${clickCount}`;
-
-  // Reset Greeting
-  greetingElement.style.color = "black";
-  greetingElement.textContent = defaultMsg;
-
-  // Reset Text Input
-  customGreetingMsg.value = "";
+  counterElement.textContent = `Counter: ${clickCount}`;
 };
+// Decrease function
+// Reset function
 
-// Event listener - this is new! Responds to user interaction
-counterButton.addEventListener("click", updateGreeting);
-resetButton.addEventListener("click", resetForm);
+// Event listeners
+increaseButton.addEventListener("click", increaseCount);
