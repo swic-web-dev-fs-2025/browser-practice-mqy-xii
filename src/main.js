@@ -24,7 +24,12 @@ const decreaseCount = () => {
   displayCounter();
 };
 // Reset function
+const resetCount = () => {
+  clickCount = 0;
+  displayCounter();
+};
 
 // Event listeners
 increaseButton.addEventListener("click", increaseCount);
 decreaseButton.addEventListener("click", decreaseCount);
+resetButton.addEventListener("click", resetCount);
