@@ -16,7 +16,7 @@ const displayCounter = () => {
 // Change background color
 const changeBGcolor = () => {
   if (clickCount >= 10) {
-    document.body.style.backgroundColor = "red";
+    document.body.style.backgroundColor = "#008f91ff";
   } else {
     document.body.style.backgroundColor = "white";
   }
